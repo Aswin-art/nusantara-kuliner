@@ -10,7 +10,7 @@ export default function About() {
         {/* Left: Image */}
         <div className="flex justify-center">
           <Image
-            src="/img/hero.jpg"
+            src="/img/about.png"
             alt="Hidangan Nusantara"
             width={480}
             height={320}

@@ -3,6 +3,7 @@
 "use client"
 import React, { useState } from "react";
 import { Phone, Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const navLinks = [
 	{ name: "Tentang Kami", href: "#tentang" },
@@ -16,12 +17,17 @@ export default function Navbar() {
 
 	return (
 		<>
-			<nav className="w-full bg-white shadow-sm py-4 sticky top-0 z-40">
-				<div className="max-w-6xl mx-auto flex items-center justify-between px-4">
+			<nav className="w-full bg-white shadow-sm sticky top-0 z-40">
+				<div className="w-full bg-white p-3">
+					<div className="bg-red-600 p-3 rounded-md text-white text-center text-xs md:text-sm">
+					Gratis ongkir min. pesanan Rp100.000 | Kode <b>NUSANTARAKU10</b> untuk diskon 10% pesanan pertama
+				</div>
+				</div>
+				<div className="max-w-6xl mx-auto flex items-center justify-between px-4 py-2">
 					{/* Logo - Always on left */}
 					<div className="flex-shrink-0">
 						<a href="/">
-							<img src="/img/logo.png" alt="Nusantara Kuliner Logo" className="w-20 h-15" />
+							<img src="/img/logo.png" alt="Nusantara Kuliner Logo" className="w-16" />
 						</a>
 					</div>
 
@@ -51,7 +57,8 @@ export default function Navbar() {
 							className="flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 rounded-xl text-white shadow hover:scale-105 transition-transform duration-200"
 							style={{ background: "linear-gradient(to right, var(--primary-300), var(--primary-600))" }}
 						>
-							<Phone className="w-4 h-4 md:w-5 md:h-5" />
+							{/* <Phone className="w-4 h-4 md:w-5 md:h-5" /> */}
+							<Image src="/icons/whatsapp.png" alt="WhatsApp" width={20} height={20} />
 							<p className="text-sm md:text-base">Pesan via Whatsapp</p>
 						</a>
 
@@ -77,9 +84,8 @@ export default function Navbar() {
 
 			{/* Mobile Sidebar Menu */}
 			<div
-				className={`md:hidden fixed top-0 left-0 h-full w-80 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${
-					open ? "translate-x-0" : "-translate-x-full"
-				}`}
+				className={`md:hidden fixed top-0 left-0 h-full w-80 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${open ? "translate-x-0" : "-translate-x-full"
+					}`}
 			>
 				{/* Sidebar Header */}
 				<div className="flex items-center justify-between p-6 border-b border-gray-100 bg-gradient-to-r from-orange-50 to-red-50">

@@ -1,5 +1,6 @@
 "use client";
 import { Send } from "lucide-react";
+import Image from "next/image";
 
 export default function ContactSection() {
   // Handler untuk submit form
@@ -39,7 +40,8 @@ export default function ContactSection() {
             <button type="submit" className="mt-2 text-white font-semibold text-lg py-3 rounded-xl flex items-center justify-center gap-2 shadow hover:scale-105 transition-transform duration-200 hover:cursor-pointer"
               style={{ background: "linear-gradient(to right, var(--primary-300), var(--primary-600))" }}
             >
-              <Send />
+              {/* <Send /> */}
+              <Image src="/icons/send.png" alt="Send" width={20} height={20} />
               Kirim Pesan
             </button>
           </form>
@@ -47,11 +49,8 @@ export default function ContactSection() {
         {/* Contact Info */}
         <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col gap-6 justify-center">
           <div className="flex items-center gap-4">
-            <span className="bg-orange-100 text-orange-600 rounded-full p-3">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75v10.5A2.25 2.25 0 004.5 19.5h15a2.25 2.25 0 002.25-2.25V6.75" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M6.75 6.75v-1.5A2.25 2.25 0 019 3h6a2.25 2.25 0 012.25 2.25v1.5" />
-              </svg>
+            <span className="bg-orange-50 text-orange-600 rounded-full p-3">
+              <Image src="/icons/call.png" alt="Phone" width={20} height={20} />
             </span>
             <div>
               <div className="font-semibold text-lg">Nomor Telepon</div>
@@ -59,10 +58,8 @@ export default function ContactSection() {
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <span className="bg-orange-100 text-orange-600 rounded-full p-3">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 6.75A2.25 2.25 0 0119.5 9v6a2.25 2.25 0 01-2.25 2.25H6.75A2.25 2.25 0 014.5 15V9a2.25 2.25 0 012.25-2.25h10.5z" />
-              </svg>
+            <span className="bg-orange-50 text-orange-600 rounded-full p-3">
+              <Image src="/icons/instagram.png" alt="Instagram" width={20} height={20} />
             </span>
             <div>
               <div className="font-semibold text-lg">Instagram</div>
@@ -70,11 +67,8 @@ export default function ContactSection() {
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <span className="bg-orange-100 text-orange-600 rounded-full p-3">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 7.5v9a2.25 2.25 0 01-2.25 2.25h-15A2.25 2.25 0 012.25 16.5v-9" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 7.5l8.25 6.75 8.25-6.75" />
-              </svg>
+            <span className="bg-orange-50 text-orange-600 rounded-full p-3">
+              <Image src="/icons/mail.png" alt="Email" width={20} height={20} />
             </span>
             <div>
               <div className="font-semibold text-lg">Email</div>
@@ -82,11 +76,8 @@ export default function ContactSection() {
             </div>
           </div>
           <div className="flex items-center gap-4">
-            <span className="bg-orange-100 text-orange-600 rounded-full p-3">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75-4.365-9.75-9.75-9.75z" />
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 7.5v4.5l3 1.5" />
-              </svg>
+            <span className="bg-orange-50 text-orange-600 rounded-full p-3">
+              <Image src="/icons/location.png" alt="Location" width={20} height={20} />
             </span>
             <div>
               <div className="font-semibold text-lg">Alamat Toko</div>

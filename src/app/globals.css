@@ -2,7 +2,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #1F1F1F;
+  --foreground: #ededed;
   --sinopia: #D93911;
   --primary-50: #fbebe7;
   --primary-100: #f3c2b5;
@@ -35,7 +35,7 @@ span, h1, h2, h3, h4 {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #ffffff;
     --foreground: #ededed;
     --eerie-black: #ededed;
     --white: #0a0a0a;

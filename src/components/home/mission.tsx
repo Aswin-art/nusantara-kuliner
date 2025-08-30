@@ -1,4 +1,5 @@
 import { Goal, Lightbulb } from "lucide-react";
+import Image from "next/image";
 import React from "react";
 
 export default function Mission() {
@@ -14,7 +15,8 @@ export default function Mission() {
           {/* Visi */}
           <div className="flex flex-col items-center text-center">
             <div className="bg-white text-orange-500 rounded-full shadow-md p-5 mb-6">
-              <Lightbulb width={40} height={40} />
+              {/* <Lightbulb width={40} height={40} /> */}
+              <Image src="/icons/visi.png" alt="Idea" width={40} height={40} />
             </div>
             <h3 className="text-2xl md:text-4xl font-bold mb-4">Visi Kami</h3>
             <p className="text-gray-700 leading-relaxed">
@@ -27,7 +29,7 @@ export default function Mission() {
           {/* Misi */}
             <div className="flex flex-col items-center text-center">
             <div className="bg-white text-orange-500 rounded-full shadow-md p-5 mb-6">
-              <Goal width={40} height={40} />
+              <Image src="/icons/misi.png" alt="Goal" width={40} height={40} />
             </div>
             <h3 className="text-2xl md:text-4xl font-bold mb-4">Misi Kami</h3>
             <ul className="text-gray-700 leading-relaxed list-disc list-inside space-y-2">

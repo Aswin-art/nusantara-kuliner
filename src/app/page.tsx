@@ -12,9 +12,6 @@ import Footer from "@/components/home/footer";
 export default function Home() {
   return (
     <div className="font-sans text-gray-800">
-      <div className="bg-red-600 text-white text-center text-sm py-2 px-4">
-        Gratis ongkir min. pesanan Rp100.000 | Kode <b>NUSANTARA10</b> untuk diskon 10% pesanan pertama
-      </div>
       <Navbar />
       <Hero />
       <Features />

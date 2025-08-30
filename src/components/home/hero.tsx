@@ -1,5 +1,4 @@
 "use client"
-import { HandHeart, Signature, Utensils } from "lucide-react";
 import Image from "next/image";
 
 export default function Hero() {
@@ -9,7 +8,7 @@ export default function Hero() {
 				{/* Image & Badges - di atas pada mobile, kanan pada desktop */}
 				<div className="relative flex justify-center items-center order-1 md:order-2 overflow-visible">
 					<Image
-						src="/img/hero.jpg"
+						src="/img/hero.png"
 						alt="Makanan Nusantara"
 						width={800}
 						height={560}
@@ -18,18 +17,19 @@ export default function Hero() {
 					/>
 					{/* Badge: 100% Autentik */}
 					<div
-						className="absolute top-8 right-[-40px] text-white px-6 py-3 rounded-xl flex items-center gap-2 text-base font-semibold shadow-lg animate-badge-float"
+						className="absolute top-8 right-[-40px] text-white px-6 py-3 rounded-xl flex items-center gap-2 text-base shadow-lg animate-badge-float"
 						style={{
 							background: "linear-gradient(to right, rgba(231,111,81,0.85), rgba(230,57,70,0.85))",
 							animation: "badgeFloat 2.5s ease-in-out infinite alternate"
 						}}
 					>
 						100% Autentik
-						<Signature />
+						<Image src="/icons/certificate.png" alt="Authentic" width={20} height={20} />
+						{/* <Signature /> */}
 					</div>
 					{/* Badge: Praktis & Sehat */}
 					<div
-						className="absolute bottom-8 left-[-40px] text-white px-6 py-3 rounded-xl flex items-center gap-2 text-base font-semibold shadow-lg animate-badge-float"
+						className="absolute bottom-8 left-[-40px] text-white px-6 py-3 rounded-xl flex items-center gap-2 text-base shadow-lg animate-badge-float"
 						style={{
 							background: "linear-gradient(to right, rgba(231,111,81,0.85), rgba(230,57,70,0.85))",
 							animation: "badgeFloat 2.5s ease-in-out infinite alternate",
@@ -37,7 +37,8 @@ export default function Hero() {
 						}}
 					>
 						Praktis & Sehat
-						<HandHeart />
+						<Image src="/icons/health.png" alt="Authentic" width={20} height={20} />
+						{/* <HandHeart /> */}
 					</div>
 				</div>
 				{/* Text & Buttons - di bawah pada mobile, kiri pada desktop */}
@@ -55,7 +56,8 @@ export default function Hero() {
 							className="flex items-center gap-2 px-6 py-3 rounded-xl text-white text-lg shadow hover:scale-105 transition-transform duration-200"
 							style={{ background: "linear-gradient(to right, var(--primary-300), var(--primary-600))" }}
 						>
-							<Utensils />
+							{/* <Utensils /> */}
+							<Image src="/icons/try.png" alt="Utensils" width={20} height={20} />
 							Coba Sekarang
 						</a>
 						<a href="#katalog" className="text-orange-600 text-lg flex items-center gap-2 hover:underline">

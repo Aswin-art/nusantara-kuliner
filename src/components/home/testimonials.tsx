@@ -2,6 +2,7 @@
 "use client"
 import React, { useEffect, useRef } from 'react';
 import { Quote, Star } from 'lucide-react';
+import Image from 'next/image';
 
 const testimonialsRow1 = [
   {
@@ -112,7 +113,8 @@ export default function TestimonialSection() {
       key={index}
   className="min-w-[280px] max-w-[280px] w-[280px] md:min-w-[320px] md:max-w-[320px] md:w-[320px] rounded-2xl border border-orange-50 bg-gray-50 p-5 md:p-6 px-6 md:px-8 flex flex-col justify-between relative transition-transform duration-500 flex-shrink-0 "
     >
-      <Quote className="text-orange-500 w-5 h-5 md:w-6 md:h-6 mb-3" fill="currentColor" />
+      {/* <Quote className="text-orange-500 w-5 h-5 md:w-6 md:h-6 mb-3" fill="currentColor" /> */}
+      <Image src="/icons/quote.png" alt="Quote" width={20} height={20} className="text-orange-500 w-5 h-5 md:w-6 md:h-6 mb-3" />
       <p className="text-gray-700 text-xs md:text-sm font-semibold mb-4 line-clamp-3 leading-relaxed">
         {testimonial.text}
       </p>
