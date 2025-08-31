@@ -17,7 +17,7 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="w-full bg-white shadow-sm sticky top-0 z-40">
+      <nav className="w-full bg-white">
         <div className="w-full bg-white p-3">
           <div className="bg-red-600 p-3 rounded-md text-white text-center text-xs md:text-sm">
             Gratis ongkir min. pesanan Rp100.000 | Kode <b>NUSANTARAKU10</b>{" "}
