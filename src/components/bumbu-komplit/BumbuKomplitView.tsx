@@ -27,7 +27,7 @@ export default function BumbuKomplitView({ initialItems }: Props) {
 
       <section style={{ marginTop: 72 }}>
         <IntroSplit
-          variant="hashtag"
+          // variant="hashtag"
           title="#SeajaibBuatanIbu"
           text={`Kalau teknologi maju, masak juga makin praktis.
 Dulu bumbu harus dikupas, diiris, diulek. Sekarang cukup tuang—rasanya tetap rumahan.`}
