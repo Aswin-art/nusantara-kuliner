@@ -1,0 +1,67 @@
+/* ====== Area wrap + halo radial ala situs referensi ====== */
+.area{
+  position: relative;
+  padding: 48px 0 8px;
+}
+.halo{
+  position:absolute; inset:auto 0 -40px 0; height:180px; z-index:0;
+  background:
+    radial-gradient(60% 60% at 50% 0%,
+      rgba(36,53,78,0.10) 0%,
+      rgba(36,53,78,0.06) 35%,
+      rgba(36,53,78,0.03) 60%,
+      rgba(36,53,78,0.00) 100%);
+  filter: blur(2px);
+}
+
+/* ====== Grid ====== */
+.grid{
+  position: relative; z-index:1;
+  display:grid; grid-template-columns: repeat(3,1fr); gap:24px;
+}
+@media (max-width: 1024px){ .grid{ grid-template-columns:1fr; } }
+
+/* ====== Card ====== */
+.card{
+  position:relative;
+  background:#ffffff;
+  border-radius:18px;
+  padding: 28px 26px 26px;
+  text-align:center;
+  box-shadow:
+    0 34px 80px rgba(0,0,0,.08),
+    0 6px 14px rgba(0,0,0,.06);
+  border: 1px solid rgba(0,0,0,.06);
+}
+
+/* ====== Icon “keluar” dari kartu ====== */
+.iconWrap{
+  position:absolute; left:50%; top:-26px; transform: translateX(-50%);
+  width: 96px; height: 96px;
+  display:grid; place-items:center;
+  filter: drop-shadow(0 16px 28px rgba(0,0,0,.15));
+}
+.icon{ width: 96px; height: 96px; display:block; }
+
+/* ====== Typography ====== */
+.h3{
+  margin: 60px 0 10px;
+  font-size: 20px;
+  font-weight: 800;
+  color: #22324a;            /* judul gelap dan tebal */
+  letter-spacing:.2px;
+}
+.p{
+  margin:0;
+  color:#526781;             /* paragraf abu-abu kebiruan */
+  line-height:1.8;
+}
+
+/* ====== Hover (subtle) ====== */
+.card:hover{
+  transform: translateY(-2px);
+  box-shadow:
+    0 42px 90px rgba(0,0,0,.10),
+    0 10px 18px rgba(0,0,0,.07);
+  transition: all .18s ease;
+}
