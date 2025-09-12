@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import BumbuKomplitView from "@/components/bumbu-komplit/BumbuKomplitView";
 import data from "@/data/bumbu-komplit";
+import Navbar from "@/components/home/navbar";
+import Footer from "@/components/home/footer";
 
 export const metadata: Metadata = {
   title: "Bumbu Komplit | Nusantara Kuliner",
@@ -16,6 +18,18 @@ export const metadata: Metadata = {
   },
 };
 
+
+
 export default function Page() {
-  return <BumbuKomplitView initialItems={data.items} />;
+  return (
+  <>
+  <Navbar />
+  
+  <BumbuKomplitView initialItems={data.items} />
+
+  <Footer />
+  </>
+);
 }
+
+

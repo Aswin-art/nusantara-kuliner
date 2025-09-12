@@ -1,7 +1,6 @@
 "use client";
-import React from "react";
-import styles from "./features.module.css";
 
+import React from "react";
 
 type Feature = {
   title: string;
@@ -30,7 +29,7 @@ const BowlIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   </svg>
 );
 
-const NaturalIcon = (props: React.SVGProps<SVGSVGElement>) => (
+const NaturalIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg viewBox="0 0 64 64" aria-hidden="true" {...props}>
     <defs>
       <linearGradient id="g2" x1="0" y1="0" x2="1" y2="1">
@@ -46,7 +45,7 @@ const NaturalIcon = (props: React.SVGProps<SVGSVGElement>) => (
   </svg>
 );
 
-const FishIcon = (props: React.SVGProps<SVGSVGElement>) => (
+const FishIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg viewBox="0 0 64 64" aria-hidden="true" {...props}>
     <defs>
       <linearGradient id="g3" x1="0" y1="0" x2="1" y2="1">
@@ -84,16 +83,32 @@ export default function FeatureCards() {
   ];
 
   return (
-    <section className={styles.area} aria-label="Keunggulan">
-      <div className={styles.halo} aria-hidden />
-      <div className={styles.grid}>
+    <section className="relative py-12" aria-label="Keunggulan">
+      {/* Halo radial ala referensi */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-0 -bottom-10 h-[180px] blur-[2px]"
+        style={{
+          background:
+            "radial-gradient(60% 60% at 50% 0%, rgba(36,53,78,0.10) 0%, rgba(36,53,78,0.06) 35%, rgba(36,53,78,0.03) 60%, rgba(36,53,78,0.00) 100%)",
+        }}
+      />
+
+      <div className="relative mx-auto grid max-w-[1280px] gap-6 px-4 md:grid-cols-3">
         {items.map(({ Icon, title, text }) => (
-          <article className={styles.card} key={title}>
-            <div className={styles.iconWrap}>
-              <Icon className={styles.icon} />
+          <article
+            key={title}
+            className="relative rounded-2xl border border-black/10 bg-white p-7 text-center shadow-[0_34px_80px_rgba(0,0,0,.08),0_6px_14px_rgba(0,0,0,.06)] transition will-change-transform hover:-translate-y-0.5 hover:shadow-[0_42px_90px_rgba(0,0,0,.10),0_10px_18px_rgba(0,0,0,.07)]"
+          >
+            {/* Icon keluar dari kartu */}
+            <div className="absolute left-1/2 -top-6 z-10 -translate-x-1/2 drop-shadow-[0_16px_28px_rgba(0,0,0,.15)]">
+              <Icon className="h-24 w-24" />
             </div>
-            <h3 className={styles.h3}>{title}</h3>
-            <p className={styles.p}>{text}</p>
+
+            <h3 className="mt-10 text-[20px] font-extrabold tracking-tight text-[#22324a]">
+              {title}
+            </h3>
+            <p className="mt-2 leading-7 text-[#526781]">{text}</p>
           </article>
         ))}
       </div>
