@@ -17,7 +17,7 @@ export default function BumbuKomplitView({ initialItems }: Props) {
       {/* Hero */}
       <HeroBanner
         title="Bumbu Komplit"
-        imageSrc="/img/bumbu-komplit/bumbu.jpeg"   // pastikan file ada
+        imageSrc="/img/bumbu-komplit/hero-bumbu-komplit.png"   // pastikan file ada
       />
 
       {/* Intro kiri-teks kanan-gambar */}
@@ -35,7 +35,7 @@ export default function BumbuKomplitView({ initialItems }: Props) {
         <h2 className="mb-4 text-center text-3xl font-extrabold tracking-tight text-[#111] sm:text-4xl">
           Bumbu Komplit
         </h2>
-        <ProductCarousel items={all} ctaLabel="Buy Now" />
+        <ProductCarousel items={all} ctaLabel="Beli sekarang" />
       </section>
 
       {/* Hashtag / CTA */}
@@ -44,7 +44,7 @@ export default function BumbuKomplitView({ initialItems }: Props) {
           title="#SeajaibBuatanIbu"
           text={`Kalau teknologi maju, masak juga makin praktis.
 Dulu bumbu harus dikupas, diiris, diulek. Sekarang cukup tuang—rasanya tetap rumahan.`}
-          buttonText="Try Now"
+          buttonText="Pesan sekarang"
           image="/img/bumbu-komplit/bumbu.jpeg"
           alt="Bumbu komplit kemasan"
         />
@@ -55,7 +55,7 @@ Dulu bumbu harus dikupas, diiris, diulek. Sekarang cukup tuang—rasanya tetap r
         <h2 className="mb-4 text-center text-3xl font-extrabold tracking-tight text-[#111] sm:text-4xl">
           Bumbu Komplit Nasi Goreng
         </h2>
-        <ProductCarousel items={nasiGoreng} ctaLabel="Buy Now" variant="marble" />
+        <ProductCarousel items={nasiGoreng} ctaLabel="Beli sekarang" />
       </section>
     </main>
   );
