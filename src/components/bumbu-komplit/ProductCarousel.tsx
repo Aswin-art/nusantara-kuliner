@@ -1,6 +1,7 @@
 "use client";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 import type { Item } from "@/data/bumbu-komplit";
@@ -16,7 +17,7 @@ export default function ProductCarousel({
   items,
   ctaLabel = "Buy Now",
   variant = "default",
-}: Props) {
+}: Readonly<Props>) {
   const [emblaRef, embla] = useEmblaCarousel({ loop: true, align: "start" });
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [snaps, setSnaps] = useState<number[]>([]);
@@ -63,20 +64,22 @@ export default function ProductCarousel({
   const slides = useMemo(() => items, [items]);
 
   return (
-    <div className="relative mx-auto max-w-[1280px] px-4 pt-2" {...bindHover}>
+    <div className="relative mx-auto max-w-[1280px] px-4 pt-2 mt-16" {...bindHover}>
       {/* Arrow kiri */}
       <button
         type="button"
         aria-label="Sebelumnya"
         onClick={() => embla?.scrollPrev()}
-        className="absolute left-2 top-1/2 z-30 -translate-y-1/2 grid h-10 w-10 place-items-center rounded-full border border-black/10 bg-white text-[26px] shadow-lg transition hover:scale-[1.06]"
+        className="absolute -left-3 top-1/2 z-30 -translate-y-1/2 flex items-center justify-center h-12 w-12 rounded-full bg-orange-600 shadow-lg transition hover:scale-[1.06] hover:cursor-pointer"
+        style={{ transform: "translateY(-100%)" }}
       >
-        ‹
+        {/* <span className="text-center align-middle text-4xl font-bold">‹</span> */}
+        <ChevronLeft />
       </button>
 
       {/* Viewport */}
-      <div className="overflow-hidden" ref={emblaRef}>
-        <div className="flex gap-5">
+      <div className="overflow-hidden rounded-[28px]" ref={emblaRef}>
+        <div className="flex gap-6">
           {slides.map((it) => (
             <div
               key={it.slug}
@@ -86,7 +89,7 @@ export default function ProductCarousel({
                 className={[
                   "grid overflow-hidden rounded-[28px] border bg-white shadow-[0_18px_48px_rgba(0,0,0,0.08)]",
                   variant === "marble" &&
-                    "bg-[#f7f7f7] border-black/10 shadow-[0_24px_60px_rgba(0,0,0,0.10)]",
+                  "bg-[#f7f7f7] border-black/10 shadow-[0_24px_60px_rgba(0,0,0,0.10)]",
                 ]
                   .filter(Boolean)
                   .join(" ")}
@@ -116,7 +119,7 @@ export default function ProductCarousel({
                     />
                   </div>
                 ) : (
-                  <div className="relative aspect-[4/3] overflow-hidden">
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-t-[28px]">
                     <Image
                       src={it.image}
                       alt={it.name}
@@ -141,36 +144,36 @@ export default function ProductCarousel({
         type="button"
         aria-label="Berikutnya"
         onClick={() => embla?.scrollNext()}
-        className="absolute right-2 top-1/2 z-30 -translate-y-1/2 grid h-10 w-10 place-items-center rounded-full border border-black/10 bg-white text-[26px] shadow-lg transition hover:scale-[1.06]"
+        className="absolute -right-3 top-1/2 z-30 -translate-y-1/2 flex items-center justify-center h-12 w-12 rounded-full  bg-orange-600 shadow-lg transition hover:scale-[1.06] hover:cursor-pointer"
+        style={{ transform: "translateY(-100%)" }}
       >
-        ›
+        <ChevronRight />
       </button>
 
       {/* Controls */}
-      <div className="mt-4 flex flex-wrap items-center justify-center gap-3">
-        <button
-          type="button"
-          className="rounded-full bg-[#f7a824] px-6 py-3 font-bold text-white shadow-[0_6px_0_0_#d88f16] transition hover:bg-[#f39c12] active:translate-y-[2px] active:shadow-[0_4px_0_0_#d88f16]"
-        >
-          {ctaLabel}
-        </button>
-
+      <div className="mt-4 flex flex-wrap items-center justify-center gap-3 flex-col">
         <div className="flex items-center gap-2">
           {snaps.map((_, i) => (
             <button
-              key={i}
+              key={slides[i]?.slug || i}
               onClick={() => embla?.scrollTo(i)}
               aria-label={`Ke slide ${i + 1}`}
-              aria-selected={i === selectedIndex}
               className={[
                 "h-2.5 w-2.5 rounded-full border border-black/10 bg-[#e2e6ea]",
-                i === selectedIndex && "bg-[#f7a824] border-[#e29a16]",
+                i === selectedIndex && "bg-orange-600",
               ]
                 .filter(Boolean)
                 .join(" ")}
             />
           ))}
         </div>
+        <button
+          type="button"
+          className="text-white font-semibold py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 transform hover:scale-105 hover:cursor-pointer"
+          style={{ background: "linear-gradient(to right, var(--primary-300), var(--primary-600))" }}
+        >
+          {ctaLabel}
+        </button>
       </div>
     </div>
   );
