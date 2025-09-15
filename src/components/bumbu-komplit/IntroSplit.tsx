@@ -1,4 +1,3 @@
-
 "use client";
 import Image from "next/image";
 
@@ -8,6 +7,10 @@ type Props = {
   readonly buttonText?: string;
   readonly image?: string;
   readonly alt?: string;
+  /** Posisi gambar pada layar md ke atas. Default: "right" */
+  readonly imageSide?: "left" | "right";
+  /** Opsional: kelas ekstra untuk <section> */
+  readonly className?: string;
 };
 
 export default function IntroSplit({
@@ -16,12 +19,17 @@ export default function IntroSplit({
   buttonText = "Pelajari Lebih Lanjut",
   image = "/img/bumbu-komplit/rendang.JPG",
   alt = "Semangkuk sup hangat",
+  imageSide = "right",
+  className = "",
 }: Props) {
+  const imageOrderMd = imageSide === "left" ? "md:order-1" : "md:order-2";
+  const textOrderMd  = imageSide === "left" ? "md:order-2" : "md:order-1";
+
   return (
-    <section className="w-full py-12 px-4 bg-white">
+    <section className={`w-full py-12 px-4 bg-white ${className}`}>
       <div className="mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        {/* Image - di atas pada mobile, kanan pada desktop */}
-        <div className="relative flex justify-center items-center order-1 md:order-2 overflow-visible">
+        {/* Image - mobile di atas; desktop di kiri/kanan sesuai imageSide */}
+        <div className={`relative flex justify-center items-center order-1 ${imageOrderMd} overflow-visible`}>
           <Image
             src={image}
             alt={alt}
@@ -31,15 +39,14 @@ export default function IntroSplit({
             priority
           />
         </div>
-        {/* Text & Button - di bawah pada mobile, kiri pada desktop */}
-        <div className="flex flex-col gap-2 order-2 md:order-1">
+
+        {/* Text - mobile di bawah; desktop kebalikan dari imageSide */}
+        <div className={`flex flex-col gap-2 order-2 ${textOrderMd}`}>
           <span className="text-orange-600 text-lg font-semibold tracking-wide">#SeajaibBuatanIbu</span>
-          <h2 className=" 
-             text-[#111] font-extrabold leading-tight
-            text-3xl sm:text-4xl md:text-5xl lg:text-[56px]">
+          <h2 className="text-[#111] font-extrabold leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-[56px]">
             {title}
           </h2>
-          <p className="mt-2 text-[#607086] text-lg">{text}</p>
+          <p className="mt-2 text-[#607086] text-lg whitespace-pre-line">{text}</p>
           <div className="flex flex-wrap gap-6 mt-4">
             <a
               href="#pelajariLebihLanjut"
