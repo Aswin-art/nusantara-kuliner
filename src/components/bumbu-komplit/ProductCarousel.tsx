@@ -152,7 +152,7 @@ export default function ProductCarousel({
 
       {/* Controls */}
       <div className="mt-4 flex flex-wrap items-center justify-center gap-3 flex-col">
-        <div className="flex items-center gap-2">
+        {/* <div className="flex items-center gap-2">
           {snaps.map((_, i) => (
             <button
               key={slides[i]?.slug || i}
@@ -166,7 +166,7 @@ export default function ProductCarousel({
                 .join(" ")}
             />
           ))}
-        </div>
+        </div> */}
         <button
           type="button"
           className="text-white font-semibold py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 transform hover:scale-105 hover:cursor-pointer"

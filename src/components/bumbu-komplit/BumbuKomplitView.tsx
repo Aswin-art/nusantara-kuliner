@@ -45,7 +45,7 @@ export default function BumbuKomplitView({ initialItems }: Props) {
           text={`Kalau teknologi maju, masak juga makin praktis.
 Dulu bumbu harus dikupas, diiris, diulek. Sekarang cukup tuang—rasanya tetap rumahan.`}
           buttonText="Pesan sekarang"
-          image="/img/bumbu-komplit/bumbu.jpeg"
+          image="/img/bumbu-komplit/RicaBebek.JPG"
           alt="Bumbu komplit kemasan"
         />
       </section>

@@ -14,7 +14,7 @@ export default function IntroSplit({
   title = "Bumbu Komplit Praktis, Dengan Bahan Natural",
   text = `Buat masakan #SeajaibBuatanIbu dengan bumbu komplit 100% rempah pilihan.\nSolusi harian untuk keluarga sibuk hingga UMKM yang butuh konsisten rasa.`,
   buttonText = "Pelajari Lebih Lanjut",
-  image = "/img/bumbu-komplit/bumbu.jpeg",
+  image = "/img/bumbu-komplit/rendang.JPG",
   alt = "Semangkuk sup hangat",
 }: Props) {
   return (
