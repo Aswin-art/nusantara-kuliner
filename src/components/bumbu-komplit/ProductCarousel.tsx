@@ -83,7 +83,7 @@ export default function ProductCarousel({
           {slides.map((it) => (
             <div
               key={it.slug}
-              className="min-w-[33.333%] basis-1/3 shrink-0 grow-0 md:min-w-1/2 md:basis-1/2 sm:min-w-full sm:basis-full"
+              className="min-w-[33.333%] basis-1/3 shrink-0 grow-0"
             >
               <article
                 className={[
@@ -97,7 +97,7 @@ export default function ProductCarousel({
                 {/* Thumb */}
                 {variant === "marble" ? (
                   <div
-                    className="relative aspect-[4/3] overflow-hidden rounded-t-[28px] border-b border-black/10 bg-center bg-cover"
+                    className="relative aspect-[3/2] overflow-hidden rounded-t-[28px] border-b border-black/10 bg-center bg-cover"
                     style={{
                       // siapkan /public/img/ui/marble.jpg
                       backgroundImage: "url('/img/ui/marble.jpg')",
@@ -119,7 +119,7 @@ export default function ProductCarousel({
                     />
                   </div>
                 ) : (
-                  <div className="relative aspect-[4/3] overflow-hidden rounded-t-[28px]">
+                  <div className="relative aspect-[3/2] overflow-hidden rounded-t-[28px]">
                     <Image
                       src={it.image}
                       alt={it.name}
