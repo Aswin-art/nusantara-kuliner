@@ -38,7 +38,7 @@ export default function BumbuKomplitView({ initialItems }: Props) {
         <h2 className="mb-4 text-center text-3xl font-extrabold tracking-tight text-[#111] sm:text-4xl">
           Bumbu Komplit
         </h2>
-        <ProductCarousel items={all} ctaLabel="Beli sekarang" />
+        <ProductCarousel items={all} ctaLabel="Beli sekarang" loop />
       </section>
 
       {/* Hashtag / CTA */}
@@ -57,7 +57,7 @@ export default function BumbuKomplitView({ initialItems }: Props) {
         <h2 className="mb-4 text-center text-3xl font-extrabold tracking-tight text-[#111] sm:text-4xl">
           Bumbu Komplit Nasi Goreng
         </h2>
-        <ProductCarousel items={nasiGoreng} ctaLabel="Beli sekarang" />
+        <ProductCarousel items={nasiGoreng} ctaLabel="Beli sekarang" loop />
       </section>
     </main>
   );

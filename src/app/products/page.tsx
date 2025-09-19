@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import BumbuKomplitView from "@/components/bumbu-komplit/BumbuKomplitView";
+import BumbuKomplitView from "@/components/products/BumbuKomplitView";
 import data from "@/data/bumbu-komplit";
 import Navbar from "@/components/home/navbar";
 import Footer from "@/components/home/footer";
@@ -18,18 +18,14 @@ export const metadata: Metadata = {
   },
 };
 
-
-
 export default function Page() {
   return (
-  <>
-  <Navbar />
-  
-  <BumbuKomplitView initialItems={data.items} />
+    <>
+      <Navbar />
 
-  <Footer />
-  </>
-);
+      <BumbuKomplitView initialItems={data.items} />
+
+      <Footer />
+    </>
+  );
 }
-
-

@@ -41,6 +41,14 @@ export default function Footer() {
             </li>
             <li>
               <a
+                href="/products"
+                className="hover:text-orange-400 text-gray-400"
+              >
+                Produk Kami
+              </a>
+            </li>
+            <li>
+              <a
                 href="#testimoni"
                 className="hover:text-orange-400 text-gray-400"
               >
@@ -50,36 +58,6 @@ export default function Footer() {
             <li>
               <a href="#kontak" className="hover:text-orange-400 text-gray-400">
                 Kontak
-              </a>
-            </li>
-          </ul>
-        </div>
-        {/* Produk Kami */}
-        <div>
-          <div className="font-semibold text-lg mb-2">Produk Kami</div>
-          <ul className="space-y-1">
-            <li>
-              <a
-                href="#katalog"
-                className="hover:text-orange-400 text-gray-400"
-              >
-                Rica-Rica Bebek
-              </a>
-            </li>
-            <li>
-              <a
-                href="#katalog"
-                className="hover:text-orange-400 text-gray-400"
-              >
-                Rica-Rica Ayam
-              </a>
-            </li>
-            <li>
-              <a
-                href="#katalog"
-                className="hover:text-orange-400 text-gray-400"
-              >
-                Rica-Rica Sapi
               </a>
             </li>
           </ul>

@@ -8,6 +8,7 @@ import Image from "next/image";
 const navLinks = [
   { name: "Tentang Kami", href: "#tentang" },
   { name: "Katalog", href: "#katalog" },
+  { name: "Produk Kami", href: "/products" },
   { name: "Testimoni", href: "#testimoni" },
   { name: "Kontak", href: "#kontak" },
 ];
@@ -17,8 +18,8 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="w-full bg-white">
-        <div className="w-full bg-white p-3">
+      <nav className="w-full bg-neutral-800">
+        <div className="w-full bg-neutral-800 p-3">
           <div className="bg-red-600 p-3 rounded-md text-white text-center text-xs md:text-sm">
             Gratis ongkir min. pesanan Rp100.000 | Kode <b>NUSANTARAKU10</b>{" "}
             untuk diskon 10% pesanan pertama
@@ -31,7 +32,7 @@ export default function Navbar() {
               <img
                 src="/img/logo.png"
                 alt="Nusantara Kuliner Logo"
-                className="w-16 bg-black rounded-full p-1"
+                className="w-16 rounded-full p-1"
               />
             </a>
           </div>
@@ -43,10 +44,10 @@ export default function Navbar() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="text-gray-700 hover:text-orange-600 text-base font-medium transition-colors duration-200 relative group"
+                  className="text-white hover:text-orange-400 text-base font-medium transition-colors duration-200 relative group"
                 >
                   {link.name}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-600 transition-all duration-300 group-hover:w-full"></span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-orange-400 transition-all duration-300 group-hover:w-full"></span>
                 </a>
               ))}
             </div>
@@ -77,11 +78,11 @@ export default function Navbar() {
 
             {/* Mobile Hamburger Button */}
             <button
-              className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+              className="md:hidden p-2 rounded-lg hover:bg-gray-800 transition-colors duration-200"
               onClick={() => setOpen(!open)}
               aria-label="Toggle menu"
             >
-              <Menu className="w-6 h-6 text-gray-700" />
+              <Menu className="w-6 h-6 text-white" />
             </button>
           </div>
         </div>

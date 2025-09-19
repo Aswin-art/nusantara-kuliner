@@ -28,7 +28,7 @@ export default function Mission() {
           </div>
 
           {/* Misi */}
-          <div className="flex flex-col items-center text-center">
+          <div className="flex flex-col items-center">
             <div className="bg-white text-orange-500 rounded-full shadow-md p-5 mb-6">
               <Image src="/icons/misi.png" alt="Goal" width={40} height={40} />
             </div>

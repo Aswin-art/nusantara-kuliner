@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
@@ -11,24 +11,29 @@ type Props = {
   ctaLabel?: string;
   /** "marble" = papan kayu di atas marmer (mirip referensi) */
   variant?: "default" | "marble";
+  loop?: boolean; // baru: kontrol loop
 };
 
 export default function ProductCarousel({
   items,
   ctaLabel = "Buy Now",
   variant = "default",
+  loop = true,
 }: Readonly<Props>) {
-  const [emblaRef, embla] = useEmblaCarousel({ loop: true, align: "start" });
-  const [selectedIndex, setSelectedIndex] = useState(0);
-  const [snaps, setSnaps] = useState<number[]>([]);
+  const [emblaRef, embla] = useEmblaCarousel({ loop, align: "start" });
   const timer = useRef<number | null>(null);
   const hovering = useRef(false);
 
   const play = useCallback(() => {
     if (!embla || hovering.current) return;
+    // Jika non-loop dan sudah di slide terakhir, jangan lanjut autoplay
+    if (!loop) {
+      const last = embla.scrollSnapList().length - 1;
+      if (embla.selectedScrollSnap() === last) return;
+    }
     embla.scrollNext();
     timer.current = window.setTimeout(play, 3800) as unknown as number;
-  }, [embla]);
+  }, [embla, loop]);
 
   const stop = useCallback(() => {
     if (timer.current) window.clearTimeout(timer.current);
@@ -37,13 +42,8 @@ export default function ProductCarousel({
 
   useEffect(() => {
     if (!embla) return;
-    setSnaps(embla.scrollSnapList());
-    const onSelect = () => setSelectedIndex(embla.selectedScrollSnap());
-    onSelect();
-    embla.on("select", onSelect);
     play();
     return () => {
-      embla.off("select", onSelect);
       stop();
     };
   }, [embla, play, stop]);
@@ -61,7 +61,17 @@ export default function ProductCarousel({
     onTouchEnd: () => play(),
   };
 
-  const slides = useMemo(() => items, [items]);
+  // Duplikasi item kalau loop aktif tapi jumlah item sedikit (misal <= 3) supaya visual loop terasa
+  const slides = useMemo(() => {
+    if (!loop) return items;
+    const MIN_LOOP_VISUAL = 5; // target minimal item agar rotasi terasa
+    if (items.length >= MIN_LOOP_VISUAL) return items;
+    const repeat = Math.ceil(MIN_LOOP_VISUAL / items.length);
+    const expanded = Array.from({ length: repeat }, () => items).flat();
+    return expanded
+      .slice(0, MIN_LOOP_VISUAL)
+      .map((it, idx) => ({ ...it, _dupIndex: idx }));
+  }, [items, loop]);
 
   return (
     <div
@@ -75,16 +85,15 @@ export default function ProductCarousel({
         onClick={() => embla?.scrollPrev()}
         className="absolute -left-3 top-1/2 z-30 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-orange-600 shadow-lg transition hover:scale-[1.06] hover:cursor-pointer"
       >
-        {/* <span className="text-center align-middle text-4xl font-bold">‹</span> */}
         <ChevronLeft />
       </button>
 
       {/* Viewport */}
       <div className="overflow-hidden rounded-[28px]" ref={emblaRef}>
         <div className="flex -mx-3">
-          {slides.map((it) => (
+          {slides.map((it: Item & { _dupIndex?: number }, idx) => (
             <div
-              key={it.slug}
+              key={(it.slug ?? it.name) + "-" + (it._dupIndex ?? idx)}
               className="flex-[0_0_33.333%] shrink-0 grow-0 px-3"
             >
               <article
@@ -127,21 +136,6 @@ export default function ProductCarousel({
 
       {/* Controls */}
       <div className="mt-4 flex flex-wrap items-center justify-center gap-3 flex-col">
-        {/* <div className="flex items-center gap-2">
-          {snaps.map((_, i) => (
-            <button
-              key={slides[i]?.slug || i}
-              onClick={() => embla?.scrollTo(i)}
-              aria-label={`Ke slide ${i + 1}`}
-              className={[
-                "h-2.5 w-2.5 rounded-full border border-black/10 bg-[#e2e6ea]",
-                i === selectedIndex && "bg-orange-600",
-              ]
-                .filter(Boolean)
-                .join(" ")}
-            />
-          ))}
-        </div> */}
         <button
           type="button"
           className="text-white font-semibold py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 transform hover:scale-105 hover:cursor-pointer"

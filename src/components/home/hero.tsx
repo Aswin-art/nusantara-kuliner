@@ -85,10 +85,10 @@ export default function Hero() {
               Coba Sekarang
             </a>
             <a
-              href="#katalog"
+              href="/products"
               className="text-orange-600 text-lg flex items-center gap-2 hover:underline"
             >
-              Lihat Katalog
+              Lihat Produk
             </a>
           </div>
         </div>

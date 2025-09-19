@@ -34,7 +34,7 @@ export default function HeroBanner({
     <section
       aria-label={title}
       className={clsx(
-        "relative w-full overflow-hidden mt-12",
+        "relative w-full overflow-hidden",
         "h-[360px] sm:h-[400px] md:h-[440px] lg:h-[480px]",
         className
       )}
@@ -82,7 +82,12 @@ export default function HeroBanner({
             transition hover:scale-110
           "
         >
-          <svg viewBox="0 0 64 64" className="h-20 w-20" role="img" aria-hidden="true">
+          <svg
+            viewBox="0 0 64 64"
+            className="h-20 w-20"
+            role="img"
+            aria-hidden="true"
+          >
             <circle cx="32" cy="32" r="30" fill="rgba(0,0,0,0.6)" />
             <polygon points="26,20 26,44 46,32" fill="#fff" />
           </svg>
