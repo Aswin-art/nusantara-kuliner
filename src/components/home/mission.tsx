@@ -20,10 +20,8 @@ export default function Mission() {
             </div>
             <h3 className="text-2xl md:text-4xl font-bold mb-4">Visi Kami</h3>
             <p className="text-gray-700 leading-relaxed">
-              Menjadi pelopor kuliner sehat berbasis rempah Nusantara yang tidak
-              hanya menghadirkan cita rasa otentik, tetapi juga menginspirasi
-              masyarakat di seluruh dunia untuk menjalani gaya hidup yang
-              praktis, sehat, dan berkualitas..
+              Menjadi pelopor kuliner sehat berbasis rempah Nusantara yang
+              menginspirasi gaya hidup praktis dan berkualitas di seluruh dunia.
             </p>
           </div>
 
@@ -36,19 +34,21 @@ export default function Mission() {
             <ul className="text-gray-700 leading-relaxed list-disc list-inside space-y-2">
               <li>
                 Menghadirkan makanan instan bebas pengawet sintetis bercita rasa
-                autentik
+                autentik.
               </li>
               <li>
                 Menggunakan rempah alami sebagai pengawet sekaligus penambah
-                rasa
+                rasa.
               </li>
               <li>
-                Mengedepankan keberlanjutan dengan bahan baku dari petani lokal
+                Memperkenalkan kekayaan kuliner Nusantara ke panggung global.
               </li>
               <li>
-                Memperkenalkan kekayaan kuliner Nusantara ke panggung global
+                Mengedepankan keberlanjutan dengan bahan baku dari petani lokal.
               </li>
-              <li>Memadukan kearifan tradisi dengan teknologi pangan modern</li>
+              <li>
+                Memadukan kearifan tradisi dengan teknologi pangan modern.
+              </li>
             </ul>
           </div>
         </div>

@@ -38,18 +38,15 @@ export default function About() {
           </h1>
           <p className="font-light text-gray-700 mb-4 text-justify">
             Di <b className="font-semibold">Nusantara Kuliner</b>, setiap
-            hidangan adalah <b className="font-semibold">perjalanan rasa</b>.
-            Dari pasar tradisional Jawa Timur,{" "}
-            <b className="font-semibold">rempah pilihan</b> kami diolah dengan
-            sentuhan inovatif melalui{" "}
-            <b className="font-semibold">pengasapan tradisional</b>,{" "}
-            <b className="font-semibold">pasteurisasi</b>, dan{" "}
-            <b className="font-semibold">kemasan vakum</b> higienis,
-            menghadirkan kepraktisan tanpa mengorbankan rasa maupun kesehatan.
-            Kami percaya bahwa makanan instan dapat menjadi solusi yang{" "}
-            <b className="font-semibold">aman, sehat, dan tetap kaya rasa</b>,
-            setiap produk adalah komitmen kami untuk membawa kehangatan rasa
-            rumah <b className="font-semibold">ke mana pun</b> Anda pergi.
+            hidangan adalah <b>perjalanan rasa</b>. Dari pasar tradisional Jawa
+            Timur, <b>rempah pilihan</b> kami diolah dengan sentuhan inovatif
+            melalui <b>pengasapan tradisional</b>, <b>pasteurisasi</b>, dan{" "}
+            <b>kemasan vakum</b> higienis, menghadirkan kepraktisan tanpa
+            mengorbankan rasa maupun kesehatan. Kami percaya bahwa makanan
+            instan dapat menjadi solusi yang{" "}
+            <b>aman, sehat, dan tetap kaya rasa</b>, setiap produk adalah
+            komitmen kami untuk membawa kehangatan rasa rumah <b>ke mana pun</b>{" "}
+            Anda pergi.
           </p>
         </div>
       </div>

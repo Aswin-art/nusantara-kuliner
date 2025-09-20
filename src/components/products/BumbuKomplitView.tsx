@@ -16,9 +16,9 @@ export default function BumbuKomplitView({ initialItems }: Props) {
     <main className="space-y-12">
       {/* Hero */}
       <HeroBanner
-        title="Bumbu Komplit"
+        title="Produk Kami"
         imageSrc="/img/bumbu-komplit/hero-bumbu-komplit.png"
-        brightness={0.75}
+        brightness={0.5}
         overlayOpacity={0.15}
         className="rounded-2xl"
       />
