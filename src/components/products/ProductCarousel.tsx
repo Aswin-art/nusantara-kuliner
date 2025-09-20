@@ -94,7 +94,7 @@ export default function ProductCarousel({
           {slides.map((it: Item & { _dupIndex?: number }, idx) => (
             <div
               key={(it.slug ?? it.name) + "-" + (it._dupIndex ?? idx)}
-              className="flex-[0_0_33.333%] shrink-0 grow-0 px-3"
+              className="basis-1/2 lg:basis-1/3 shrink-0 grow-0 px-3"
             >
               <article
                 className={[
@@ -110,7 +110,7 @@ export default function ProductCarousel({
                     src={it.image}
                     alt={it.name}
                     fill
-                    sizes="(max-width:1200px) 80vw, 420px"
+                    sizes="(max-width:1024px) 50vw, 33vw"
                     className="object-cover"
                   />
                 </div>

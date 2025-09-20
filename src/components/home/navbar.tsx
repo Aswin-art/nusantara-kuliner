@@ -38,7 +38,7 @@ export default function Navbar() {
           </div>
 
           {/* Desktop Navigation Links - Center */}
-          <div className="hidden md:flex flex-1 justify-center">
+          <div className="hidden lg:flex flex-1 justify-center">
             <div className="flex gap-8">
               {navLinks.map((link) => (
                 <a
@@ -78,7 +78,7 @@ export default function Navbar() {
 
             {/* Mobile Hamburger Button */}
             <button
-              className="md:hidden p-2 rounded-lg hover:bg-gray-800 transition-colors duration-200"
+              className="lg:hidden p-2 rounded-lg hover:bg-gray-800 transition-colors duration-200"
               onClick={() => setOpen(!open)}
               aria-label="Toggle menu"
             >
@@ -91,35 +91,35 @@ export default function Navbar() {
       {/* Mobile Sidebar Overlay */}
       {open && (
         <div
-          className="fixed inset-0 bg-gray-900 bg-opacity-50 z-50 md:hidden transition-opacity duration-300"
+          className="fixed inset-0 bg-black/70 z-50 md:hidden transition-opacity duration-300"
           onClick={() => setOpen(false)}
         />
       )}
 
       {/* Mobile Sidebar Menu */}
       <div
-        className={`md:hidden fixed top-0 left-0 h-full w-80 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${
+        className={`lg:hidden fixed top-0 left-0 h-full w-80 bg-white shadow-2xl z-50 transform transition-transform duration-300 ease-in-out ${
           open ? "translate-x-0" : "-translate-x-full"
         }`}
       >
         {/* Sidebar Header */}
-        <div className="flex items-center justify-between p-6 border-b border-gray-100 bg-gradient-to-r from-orange-50 to-red-50">
+        <div className="flex items-center justify-between p-6 border-b border-gray-100 bg-neutral-800">
           <div className="flex items-center gap-3">
             <img
               src="/img/logo.png"
               alt="Nusantara Kuliner"
               className="w-10 h-8"
             />
-            <span className="text-lg font-semibold text-gray-800">
+            <span className="text-lg font-semibold text-white">
               Nusantara Kuliner
             </span>
           </div>
           <button
             onClick={() => setOpen(false)}
-            className="p-2 rounded-full hover:bg-white/70 transition-colors duration-200"
+            className="p-2 rounded-lg hover:bg-white/70 transition-colors duration-200"
             aria-label="Close menu"
           >
-            <X className="w-6 h-6 text-gray-600" />
+            <X className="w-6 h-6 text-white" />
           </button>
         </div>
 

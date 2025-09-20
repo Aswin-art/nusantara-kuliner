@@ -6,7 +6,7 @@ export default function Hero() {
     <section className="w-full py-12 px-4 bg-white">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* Image & Badges - di atas pada mobile, kanan pada desktop */}
-        <div className="relative flex justify-center items-center order-1 md:order-2 overflow-visible">
+        <div className="relative flex justify-center items-center order-1 md:order-2 overflow-hidden md:overflow-visible">
           <Image
             src="/img/hero.jpg"
             alt="Makanan Nusantara"
@@ -17,7 +17,7 @@ export default function Hero() {
           />
           {/* Badge: 100% Autentik */}
           <div
-            className="absolute top-8 right-[-40px] text-white px-6 py-3 rounded-xl flex items-center gap-2 text-base shadow-lg animate-badge-float"
+            className="absolute top-4 right-2 md:top-8 md:right-4 lg:right-[-40px] text-white px-5 py-3 md:px-6 md:py-3 rounded-xl flex items-center gap-2 text-base md:text-lg shadow-lg animate-badge-float"
             style={{
               background:
                 "linear-gradient(to right, rgba(231,111,81,0.85), rgba(230,57,70,0.85))",
@@ -30,12 +30,12 @@ export default function Hero() {
               alt="Authentic"
               width={20}
               height={20}
+              className="md:w-5 md:h-5"
             />
-            {/* <Signature /> */}
           </div>
           {/* Badge: Praktis & Sehat */}
           <div
-            className="absolute bottom-8 left-[-40px] text-white px-6 py-3 rounded-xl flex items-center gap-2 text-base shadow-lg animate-badge-float"
+            className="absolute bottom-4 left-2 md:bottom-8 md:left-4 lg:left-[-40px] text-white px-5 py-3 md:px-6 md:py-3 rounded-xl flex items-center gap-2 text-base md:text-lg shadow-lg animate-badge-float"
             style={{
               background:
                 "linear-gradient(to right, rgba(231,111,81,0.85), rgba(230,57,70,0.85))",
@@ -46,11 +46,11 @@ export default function Hero() {
             Praktis & Sehat
             <Image
               src="/icons/health.png"
-              alt="Authentic"
+              alt="Praktis dan Sehat"
               width={20}
               height={20}
+              className="md:w-5 md:h-5"
             />
-            {/* <HandHeart /> */}
           </div>
         </div>
         {/* Text & Buttons - di bawah pada mobile, kiri pada desktop */}
@@ -75,13 +75,7 @@ export default function Hero() {
                   "linear-gradient(to right, var(--primary-300), var(--primary-600))",
               }}
             >
-              {/* <Utensils /> */}
-              <Image
-                src="/icons/try.png"
-                alt="Utensils"
-                width={20}
-                height={20}
-              />
+              <Image src="/icons/try.png" alt="Coba" width={20} height={20} />
               Coba Sekarang
             </a>
             <a
