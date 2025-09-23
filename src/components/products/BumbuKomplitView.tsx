@@ -39,7 +39,7 @@ export default function BumbuKomplitView() {
 
       <section className="mx-auto max-w-[1280px] px-4">
         <IntroSplit
-          title="#SeajaibBuatanIbu"
+          title="Bumbu Instan, Siap Masak"
           text={`Kalau teknologi maju, masak juga makin praktis.\nDulu bumbu harus dikupas, diiris, diulek. Sekarang cukup tuang—rasanya tetap rumahan.`}
           buttonText="Pesan sekarang"
           image="/img/bumbu-komplit/RicaBebek.JPG"

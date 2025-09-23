@@ -153,7 +153,7 @@ export default function TestimonialSection() {
   );
 
   return (
-    <section className="w-full py-36 bg-white relative overflow-hidden">
+    <section id="testimoni" className="w-full py-36 bg-white relative overflow-hidden">
       {/* Corner Decorations pakai gambar seperti about */}
       <img
         src="/img/corner.png"

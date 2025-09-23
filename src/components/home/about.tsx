@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section className="w-full py-32 bg-white relative overflow-hidden">
+    <section id="tentang" className="w-full py-32 bg-white relative overflow-hidden">
       {/* Corner Decorations */}
       <Image
         src="/img/corner.png"

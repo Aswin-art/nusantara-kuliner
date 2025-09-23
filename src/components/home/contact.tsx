@@ -41,7 +41,7 @@ export default function ContactSection() {
     window.open(url, "_blank", "noopener,noreferrer");
   }
   return (
-    <section className="w-full py-16 bg-orange-50 flex justify-center items-center">
+    <section id="kontak" className="w-full py-16 bg-orange-50 flex justify-center items-center">
       <div className="max-w-6xl w-full grid md:grid-cols-2 gap-8 px-4">
         {/* Form */}
         <div className="bg-white rounded-2xl shadow-lg p-8 flex flex-col justify-center">
