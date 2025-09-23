@@ -1,17 +1,12 @@
 "use client";
-import { Send } from "lucide-react";
 import Image from "next/image";
 
 export default function ContactSection() {
-  // Handler untuk submit form
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const nama = (
       form.elements.namedItem("nama") as HTMLInputElement
-    )?.value.trim();
-    const email = (
-      form.elements.namedItem("email") as HTMLInputElement
     )?.value.trim();
     const whatsapp = (
       form.elements.namedItem("whatsapp") as HTMLInputElement
@@ -20,43 +15,10 @@ export default function ContactSection() {
       form.elements.namedItem("pesan") as HTMLTextAreaElement
     )?.value.trim();
 
-    if (!nama || !email || !whatsapp || !pesanRaw) {
+    if (!nama || !whatsapp || !pesanRaw) {
       alert("Semua field wajib diisi!");
       return;
     }
-
-    // CRLF agar kompatibel di lebih banyak mail client
-    const nl = "\r\n";
-    const subject = encodeURIComponent("Pesan dari Form Nusantara Kuliner");
-
-    const bodyPlain =
-      `Nama: ${nama}${nl}` +
-      `Email: ${email}${nl}` +
-      `Nomor WhatsApp: ${whatsapp}${nl}` +
-      `Pesan:${nl}${pesanRaw}`;
-
-    const body = encodeURIComponent(bodyPlain);
-
-    const mailto = `mailto:aswiinarung1@gmail.com?subject=${subject}&body=${body}`;
-
-    // Batas aman panjang URL (konservatif)
-    if (mailto.length > 1800) {
-      alert(
-        "Pesan terlalu panjang untuk dibuka via email client. Mohon ringkas pesan atau hubungi kami langsung."
-      );
-      return;
-    }
-
-    // Buka mail client
-    window.location.href = mailto;
-
-    // --- OPSIONAL: fallback Gmail compose jika ingin ---
-    setTimeout(() => {
-      const gmailCompose = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(
-        "aswiinarung1@gmail.com"
-      )}&su=${subject}&body=${body}`;
-      window.open(gmailCompose, "_blank");
-    }, 500);
   }
   return (
     <section className="w-full py-16 bg-orange-50 flex justify-center items-center">
@@ -82,13 +44,6 @@ export default function ContactSection() {
               className="border rounded-lg px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-orange-400"
             />
             <input
-              type="email"
-              name="email"
-              required
-              placeholder="Email *"
-              className="border rounded-lg px-4 py-3 text-base focus:outline-none focus:ring-2 focus:ring-orange-400"
-            />
-            <input
               type="text"
               name="whatsapp"
               required
@@ -110,7 +65,6 @@ export default function ContactSection() {
                   "linear-gradient(to right, var(--primary-300), var(--primary-600))",
               }}
             >
-              {/* <Send /> */}
               <Image src="/icons/send.png" alt="Send" width={20} height={20} />
               Kirim Pesan
             </button>
@@ -124,7 +78,7 @@ export default function ContactSection() {
             </span>
             <div>
               <div className="font-semibold text-lg">Nomor Telepon</div>
-              <div className="text-gray-700">0812 3456 7890</div>
+              <div className="text-gray-700">085691919971</div>
             </div>
           </div>
           <div className="flex items-center gap-4">
@@ -147,7 +101,7 @@ export default function ContactSection() {
             </span>
             <div>
               <div className="font-semibold text-lg">Email</div>
-              <div className="text-gray-700">nusantara.kuliner@gmail.com</div>
+              <div className="text-gray-700">nusantarakuliner88@gmail.com</div>
             </div>
           </div>
           <div className="flex items-center gap-4">
@@ -162,13 +116,14 @@ export default function ContactSection() {
             <div>
               <div className="font-semibold text-lg">Alamat Toko</div>
               <div className="text-gray-700">
-                Jl. Raya Contoh No.99, Example, Indonesia 10101
+                Perum Royal Juanda Blok B/2, Tani Nelayan, Pepe, Kec. Sedati,
+                Kabupaten Sidoarjo, Jawa Timur 61253
               </div>
             </div>
           </div>
           <div className="rounded-xl overflow-hidden mt-2">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d590.3390180101454!2d106.77850243592555!3d-6.229217739559027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1819b15e725%3A0x7a17eef77b277737!2sKuliner%20Nusantara!5e1!3m2!1sid!2sid!4v1756491897065!5m2!1sid!2sid"
+              src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d4950.846873636942!2d112.775309!3d-7.403531999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zN8KwMjQnMTIuNyJTIDExMsKwNDYnMzEuMSJF!5e1!3m2!1sid!2sid!4v1758622085542!5m2!1sid!2sid"
               height="120"
               style={{ border: 0 }}
               className="w-full h-36 md:h-44 lg:h-52"

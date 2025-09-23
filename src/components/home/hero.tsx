@@ -5,7 +5,6 @@ export default function Hero() {
   return (
     <section className="w-full py-12 px-4 bg-white">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-        {/* Image & Badges - di atas pada mobile, kanan pada desktop */}
         <div className="relative flex justify-center items-center order-1 md:order-2 overflow-hidden md:overflow-visible">
           <Image
             src="/img/hero.jpg"
@@ -15,7 +14,6 @@ export default function Hero() {
             className="rounded-2xl shadow-lg object-cover"
             priority
           />
-          {/* Badge: 100% Autentik */}
           <div
             className="absolute top-4 right-2 md:top-8 md:right-4 lg:right-[-40px] text-white px-5 py-3 md:px-6 md:py-3 rounded-xl flex items-center gap-2 text-base md:text-lg shadow-lg animate-badge-float"
             style={{

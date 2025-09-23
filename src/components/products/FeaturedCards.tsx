@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from "react";
@@ -14,8 +13,8 @@ export default function FeatureCards() {
   const items: Feature[] = [
     {
       Icon: CookingPot,
-      title: "Bumbu Sudah Matang",
-      text: "Praktis untuk sehari-hari—cukup tumis/tuang, rasa konsisten. Khusus varian nasi goreng tinggal aduk 20x.",
+      title: "Praktis & Cepat Saji",
+      text: "Hanya perlu dipanaskan, rasa tetap konsisten dan autentik seperti masakan rumahan.",
     },
     {
       Icon: Leaf,
@@ -24,8 +23,8 @@ export default function FeatureCards() {
     },
     {
       Icon: Fish,
-      title: "Dengan Daging Ikan Asli",
-      text: "Beberapa varian pakai protein asli, lezat & bernutrisi (omega-3) yang baik untuk tubuh.",
+      title: "Protein Berkualitas",
+      text: "Varian ayam, daging, dan ikan diproses higienis sehingga tetap lezat, bergizi, dan aman untuk dikonsumsi.",
     },
   ];
 
@@ -39,8 +38,13 @@ export default function FeatureCards() {
             className="relative rounded-2xl border shadow-2xl border-black/10 bg-white p-7 text-center transition will-change-transform hover:-translate-y-1"
           >
             <div className="flex justify-center items-center mt-0 mb-4">
-              <div className="h-24 w-24 rounded-full flex items-center justify-center"
-                style={{ background: "linear-gradient(to right, var(--primary-300), var(--primary-600))" }}>
+              <div
+                className="h-24 w-24 rounded-full flex items-center justify-center"
+                style={{
+                  background:
+                    "linear-gradient(to right, var(--primary-300), var(--primary-600))",
+                }}
+              >
                 <Icon className="h-12 w-12 text-white" />
               </div>
             </div>
