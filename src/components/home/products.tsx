@@ -42,7 +42,7 @@ const products = [
     rating: 5,
     reviews: 21,
     wa: "https://wa.me/6285691919971?text=Pesan%20Sambal%20Cabai%20Rawit",
-    category: "Sambel",
+    category: "Sambal",
   },
   {
     name: "Sambal Cabai Ijo",
@@ -52,7 +52,7 @@ const products = [
     rating: 4,
     reviews: 17,
     wa: "https://wa.me/6285691919971?text=Pesan%20Kacang%20Pedas%20Nusantara",
-    category: "Sambel",
+    category: "Sambal",
   },
   {
     name: "Sambal Bawang",
@@ -62,7 +62,7 @@ const products = [
     rating: 4,
     reviews: 17,
     wa: "https://wa.me/6285691919971?text=Pesan%20Kacang%20Pedas%20Nusantara",
-    category: "Sambel",
+    category: "Sambal",
   },
   {
     name: "Bumbu Rica Instan",
@@ -128,7 +128,7 @@ const products = [
 
 const categories = [
   { name: "Frozen", active: true },
-  { name: "Sambel", active: false },
+  { name: "Sambal", active: false },
   { name: "Bumbu Instan", active: false },
   { name: "Bundling", active: false },
 ];

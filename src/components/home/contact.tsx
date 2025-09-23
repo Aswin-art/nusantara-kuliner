@@ -112,7 +112,7 @@ export default function ContactSection() {
             </span>
             <div>
               <div className="font-semibold text-lg">Instagram</div>
-              <div className="text-gray-700">@nusantara.kuliner</div>
+              <div className="text-gray-700">@nusantarakuliner_1</div>
             </div>
           </div>
           <div className="flex items-center gap-4">

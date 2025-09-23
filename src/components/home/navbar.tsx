@@ -6,11 +6,11 @@ import { Phone, Menu, X } from "lucide-react";
 import Image from "next/image";
 
 const navLinks = [
+  { name: "Home", href: "/" },
   { name: "Tentang Kami", href: "#tentang" },
-  { name: "Katalog", href: "#katalog" },
-  { name: "Produk Kami", href: "/products" },
   { name: "Testimoni", href: "#testimoni" },
   { name: "Kontak", href: "#kontak" },
+  { name: "Produk Kami", href: "/products" },
 ];
 
 export default function Navbar() {

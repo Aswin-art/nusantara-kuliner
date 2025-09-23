@@ -33,22 +33,6 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="#katalog"
-                className="hover:text-orange-400 text-gray-400"
-              >
-                Katalog
-              </a>
-            </li>
-            <li>
-              <a
-                href="/products"
-                className="hover:text-orange-400 text-gray-400"
-              >
-                Produk Kami
-              </a>
-            </li>
-            <li>
-              <a
                 href="#testimoni"
                 className="hover:text-orange-400 text-gray-400"
               >
@@ -60,20 +44,12 @@ export default function Footer() {
                 Kontak
               </a>
             </li>
-          </ul>
-        </div>
-        {/* Perusahaan & Social */}
-        <div>
-          <div className="font-semibold text-lg mb-2">Perusahaan</div>
-          <ul className="space-y-1 mb-4">
             <li>
-              <a href="#" className="hover:text-orange-400 text-gray-400">
-                Nusantara Kuliner
-              </a>
-            </li>
-            <li>
-              <a href="#" className="hover:text-orange-400 text-gray-400">
-                Visi dan Misi
+              <a
+                href="/products"
+                className="hover:text-orange-400 text-gray-400"
+              >
+                Produk Kami
               </a>
             </li>
           </ul>

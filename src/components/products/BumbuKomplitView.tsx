@@ -66,7 +66,7 @@ export default function BumbuKomplitView() {
 
       <section className="mx-auto max-w-[1280px] px-4 pb-16">
         <h2 className="mb-4 text-center text-3xl font-extrabold tracking-tight text-[#111] sm:text-4xl">
-          Sambalan
+          Aneka Sambalan
         </h2>
         <ProductCarousel items={sambals} ctaLabel="Beli sekarang" loop />
       </section>

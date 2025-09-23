@@ -94,7 +94,7 @@ export default function ProductCarousel({
           {slides.map((it: Item & { _dupIndex?: number }, idx) => (
             <div
               key={it.name + "-" + (it._dupIndex ?? idx)}
-              className="basis-1/2 lg:basis-1/3 shrink-0 grow-0 px-3"
+              className="basis-full sm:basis-1/2 lg:basis-1/3 shrink-0 grow-0 px-3"
             >
               <article
                 className={[
@@ -110,11 +110,10 @@ export default function ProductCarousel({
                     src={it.image}
                     alt={it.name}
                     fill
-                    sizes="(max-width:1024px) 50vw, 33vw"
+                    sizes="(max-width:640px) 100vw, (max-width:1024px) 50vw, 33vw"
                     className="object-cover"
                   />
                 </div>
-
                 <h3 className="m-0 px-3 pb-5 pt-4 text-center text-[18px] font-bold text-[#454545]">
                   {it.name}
                 </h3>
@@ -136,16 +135,19 @@ export default function ProductCarousel({
 
       {/* Controls */}
       <div className="mt-4 flex flex-wrap items-center justify-center gap-3 flex-col">
-        <button
-          type="button"
+        <a
+          href="https://wa.me/628123456789"
+          target="_blank"
+          rel="noopener noreferrer"
           className="text-white font-semibold py-3 px-4 rounded-lg flex items-center justify-center gap-2 transition-all duration-300 transform hover:scale-105 hover:cursor-pointer"
           style={{
             background:
               "linear-gradient(to right, var(--primary-300), var(--primary-600))",
           }}
         >
-          {ctaLabel}
-        </button>
+          <Image src="/icons/cart1.png" alt="WhatsApp" width={20} height={20} />
+          Beli Sekarang
+        </a>
       </div>
     </div>
   );
