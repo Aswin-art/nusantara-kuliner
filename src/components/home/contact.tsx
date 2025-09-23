@@ -19,6 +19,26 @@ export default function ContactSection() {
       alert("Semua field wajib diisi!");
       return;
     }
+
+    const targetNumber = "6285691919971";
+
+    const userPhone = whatsapp.replace(/[^\d]/g, "");
+
+    const message = [
+      "Halo Nusantara Kuliner,",
+      "",
+      `Nama: ${nama}`,
+      `No. WhatsApp: ${userPhone}`,
+      `Pesan: ${pesanRaw}`,
+      "",
+      "Terima kasih.",
+    ].join("\n");
+
+    const url = `https://wa.me/${targetNumber}?text=${encodeURIComponent(
+      message
+    )}`;
+
+    window.open(url, "_blank", "noopener,noreferrer");
   }
   return (
     <section className="w-full py-16 bg-orange-50 flex justify-center items-center">
