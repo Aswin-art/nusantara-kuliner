@@ -93,7 +93,7 @@ export default function ProductCarousel({
         <div className="flex -mx-3">
           {slides.map((it: Item & { _dupIndex?: number }, idx) => (
             <div
-              key={(it.slug ?? it.name) + "-" + (it._dupIndex ?? idx)}
+              key={it.name + "-" + (it._dupIndex ?? idx)}
               className="basis-1/2 lg:basis-1/3 shrink-0 grow-0 px-3"
             >
               <article
