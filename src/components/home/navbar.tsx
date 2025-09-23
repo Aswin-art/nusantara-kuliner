@@ -163,9 +163,9 @@ export default function Navbar() {
               Hubungi Kami
             </h3>
             <div className="space-y-2 text-sm text-gray-600">
-              <p>📧 info@nusantarakuliner.com</p>
-              <p>📱 +62 812-3456-7890</p>
-              <p>📍 Jakarta, Indonesia</p>
+              <p>📧 nusantarakuliner88@gmail.com</p>
+              <p>📱 +62 8569-1919-971</p>
+              <p>📍 Surabaya, Indonesia</p>
             </div>
           </div>
         </div>
